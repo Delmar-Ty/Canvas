@@ -52,13 +52,14 @@ ctx.lineTo(headPosX - headSize, (headPosY + headSize * 0.1) + headSize * 1.1);
 ctx.arcTo(headPosX - headSize, (headPosY + headSize * 0.1) + headSize * 1.5, headPosX + (headSize * 1.75), (headPosY + headSize * 0.1) + headSize * 1.5, headSize / 4);
 ctx.lineTo(headPosX + (headSize / 1.75), (headPosY + headSize * 0.1) + headSize * 1.5);
 ctx.arcTo(headPosX + headSize, (headPosY + headSize * 0.1) + headSize * 1.5, headPosX + headSize, (headPosY + headSize * 0.1) + headSize * 1.1, headSize / 4);
+ctx.lineTo(headPosX + headSize, headPosY + headSize * 0.1);
 ctx.stroke();
 ctx.fill();
 ctx.closePath();
 
     //Legs
 
-//Leg 1
+//Leg Left
 ctx.beginPath();
 ctx.lineWidth = 1;
 ctx.strokeStyle = '#3DDC84';
@@ -69,7 +70,7 @@ ctx.stroke();
 ctx.fill();
 ctx.closePath();
 
-//Leg 2
+//Leg Right
 ctx.beginPath();
 ctx.lineWidth = 1;
 ctx.strokeStyle = '#3DDC84';
@@ -82,10 +83,26 @@ ctx.closePath();
 
     //Arms
 
-//Arm 1
+//Arm Right
 ctx.beginPath();
 ctx.lineWidth = 1;
 ctx.strokeStyle = '#3DDC84';
 ctx.fillStyle = '#3DDC84';
+ctx.arc(((headPosX + headSize) + headSize * 0.1) + (headSize / 2.5) / 2, (headPosY + headSize * 0.05) + ((headSize / 2.5) / 2), (headSize / 2.5) / 2, Math.PI, 0);
+ctx.rect((((headPosX + headSize) + headSize * 0.1)), (headPosY + headSize * 0.05) + ((headSize / 2.5) / 2), headSize / 2.5, headSize / 1.25);
+ctx.arc(((headPosX + headSize) + headSize * 0.1) + (headSize / 2.5) / 2, ((headPosY + headSize * 0.05) + ((headSize / 2.5) / 2)) + headSize / 1.25, (headSize / 2.5) / 2, 0, Math.PI);
+ctx.stroke();
+ctx.fill();
+ctx.closePath();
 
+//Arm Left
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.strokeStyle = '#3DDC84';
+ctx.fillStyle = '#3DDC84';
+ctx.arc(((headPosX - headSize) - headSize * 0.1) - (headSize / 2.5) / 2, (headPosY + headSize * 0.05) + ((headSize / 2.5) / 2), (headSize / 2.5) / 2, Math.PI, 0);
+ctx.rect((((headPosX - headSize) - headSize * 0.1)) - headSize / 2.5, (headPosY + headSize * 0.05) + ((headSize / 2.5) / 2), headSize / 2.5, headSize / 1.25);
+ctx.arc(((headPosX - headSize) - headSize * 0.1) - (headSize / 2.5) / 2, ((headPosY + headSize * 0.05) + ((headSize / 2.5) / 2)) + headSize / 1.25, (headSize / 2.5) / 2, 0, Math.PI);
+ctx.stroke();
+ctx.fill();
 ctx.closePath();
