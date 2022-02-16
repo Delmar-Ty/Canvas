@@ -2,7 +2,7 @@ var canvas = document.getElementById('blank');
 var ctx = canvas.getContext('2d');
 var headPosX = canvas.width / 2;
 var headPosY = canvas.height / 3;
-var headSize = canvas.height / 6;
+var headSize = canvas.height / 5;
 
 //Head Shape
 ctx.beginPath();
@@ -38,4 +38,54 @@ ctx.beginPath();
 ctx.arc(headPosX + (headSize / 2.3), headPosY - (headSize / 2.3), headSize / 12, 0, Math.PI * 2);
 ctx.stroke();
 ctx.fill();
-ctx.closePath(); 
+ctx.closePath();
+
+//Body
+ctx.beginPath();
+ctx.lineCap = 'butt';
+ctx.lineWidth = 1;
+ctx.fillStyle = '#3DDC84';
+ctx.strokeStyle = '#3DDC84';
+ctx.moveTo(headPosX + headSize, headPosY + headSize * 0.1);
+ctx.lineTo(headPosX - headSize, headPosY + headSize * 0.1);
+ctx.lineTo(headPosX - headSize, (headPosY + headSize * 0.1) + headSize * 1.1);
+ctx.arcTo(headPosX - headSize, (headPosY + headSize * 0.1) + headSize * 1.5, headPosX + (headSize * 1.75), (headPosY + headSize * 0.1) + headSize * 1.5, headSize / 4);
+ctx.lineTo(headPosX + (headSize / 1.75), (headPosY + headSize * 0.1) + headSize * 1.5);
+ctx.arcTo(headPosX + headSize, (headPosY + headSize * 0.1) + headSize * 1.5, headPosX + headSize, (headPosY + headSize * 0.1) + headSize * 1.1, headSize / 4);
+ctx.stroke();
+ctx.fill();
+ctx.closePath();
+
+    //Legs
+
+//Leg 1
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.strokeStyle = '#3DDC84';
+ctx.fillStyle = '#3DDC84';
+ctx.rect(headPosX - (headSize / 1.7), (headPosY + headSize * 0.1) + headSize * 1.5, headSize / 2.5, headSize / 2);
+ctx.arc(headPosX - (headSize / 1.7) + (headSize / 2.5) / 2, ((headPosY + headSize * 0.1) + headSize * 1.5) + headSize / 2, (headSize / 2.5) / 2, 0, Math.PI);
+ctx.stroke();
+ctx.fill();
+ctx.closePath();
+
+//Leg 2
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.strokeStyle = '#3DDC84';
+ctx.fillStyle = '#3DDC84';
+ctx.rect((headPosX + (headSize / 1.7)) - headSize / 2.5, (headPosY + headSize * 0.1) + headSize * 1.5, headSize / 2.5, headSize / 2);
+ctx.arc(((headPosX + (headSize / 1.7)) - headSize / 2.5) + (headSize / 2.5) / 2, ((headPosY + headSize * 0.1) + headSize * 1.5) + headSize / 2, (headSize / 2.5) / 2, 0, Math.PI);
+ctx.stroke();
+ctx.fill();
+ctx.closePath();
+
+    //Arms
+
+//Arm 1
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.strokeStyle = '#3DDC84';
+ctx.fillStyle = '#3DDC84';
+
+ctx.closePath();
